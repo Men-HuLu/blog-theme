@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<%- partial('partials/head') %>
+
+<body>
+  <%- partial('partials/header') %>
+  <main>
+
+    <% 
+      var test = "基本上，就用这两组标签，其他的也用不上。";
+    %>
+
+    <%- test %>
+    <%
+    site.posts.map(function(post){ %>
+
+    <%- post.path %>
+    <br />
+    <%- post.slug %>
+    <br />
+    <%- post._id %>
+    <br />
+    <%- post.title %>
+    <br />
+    <%- post.date %>
+    <br />
+
+    <a href="/<%- post.path %>"><%- post.title %></a>
+    <% }); %>
+
+    <%
+    [1,2,3].map(function(r){
+      %><%- r  %>,<%
+    })
+    %>
+
+  </main>
+  <%- partial('partials/footer') %>
+</body>
+
+</html>
